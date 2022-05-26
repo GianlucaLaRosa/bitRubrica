@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap");
+@scroll-timeline scrollProgress {
+  source: selector(body);
+}
+
+@keyframes scrollProgress {
+  to {
+    transform: translateX(0);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-family: "Odibee Sans", cursive;
+}
+
+body {
+  background-color: var(--body-bcol);
+  color: var(--gray);
+  overflow-x: hidden;
+}
+
+.progression__bar {
+  height: 5px;
+  background-color: var(--accent);
+  position: fixed;
+  inset: 0 0 auto;
+  transform: translateX(-100%);
+  animation: scrollProgress 1s linear both;
+  animation-timeline: scrollProgress;
+}
+
+header {
+  height: 6rem;
+  background-color: var(--header-bcol);
+  padding: 1.2rem 2rem;
+  border-bottom: 1px solid var(--gray);
+  box-shadow: 0 4px 7px var(--dark);
+}
+
+h1 {
+  color: var(--header);
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+}
+
+nav a::before {
+  content: "";
+}
+
+#logo {
+  width: 3rem;
+  height: 3rem;
+  margin-inline-end: 3rem;
+}
+main {
+  min-height: calc(100vh - 17rem);
+  margin: 4rem auto 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+table {
+  width: 40vw;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: var(--gray-transp);
+}
+
+caption {
+  font-size: 2.6rem;
+  padding: 0.4rem;
+}
+
+tr:nth-child(even) {
+  background-color: var(--gray-transp);
+}
+
+td {
+  text-align: center;
+  padding-block: 1rem;
+  font-size: 1.6rem;
+}
+
+a,
+a:link,
+a:visited,
+a:active {
+  color: var(--gray);
+  text-decoration: none;
+}
+
+.name a {
+  position: relative;
+}
+
+.name {
+  text-decoration: none;
+  transition: transform 0.4s;
+}
+
+a::before {
+  content: "»";
+  display: none;
+}
+
+a:hover::before {
+  display: block;
+  position: absolute;
+  left: -1rem;
+}
+
+.name:hover {
+  transform: scale(1.2);
+}
+
+th {
+  font-size: 2rem;
+}
+
+footer {
+  height: 3rem;
+  margin: 2rem auto 0;
+  text-align: center;
+}

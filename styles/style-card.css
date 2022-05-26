@@ -1,0 +1,291 @@
+.card {
+  background-color: var(--primary);
+  width: 70%;
+  min-height: 38rem;
+  padding: 2rem 4rem;
+  border: 1px solid var(--accent);
+  border-radius: 30px;
+  box-shadow: 6px 6px 22px var(--gray);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.card__pic__container {
+  width: 10rem;
+  height: 9rem;
+}
+
+.card__pic {
+  transition: transform 4.5s cubic-bezier(0.75, 0, 0.25, 0.99);
+  transform-style: preserve-3d;
+}
+
+.card__pic img {
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%;
+  transform: translateZ(2rem);
+}
+
+.card__pic__container:hover .card__pic {
+  transform: rotateY(0.5turn);
+}
+
+.card__pic--front,
+.card__pic--back {
+  position: absolute;
+  inset: 0 0 0 0;
+  padding: 5em 3em;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__pic--front {
+  background-color: transparent;
+  border-radius: 50%;
+}
+
+.card__pic--front::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 0 0;
+  border-radius: 50%;
+  border: 3px solid currentColor;
+  transform: translateZ(3rem);
+}
+
+.card__icon {
+  transform: translateZ(2rem);
+  width: 4rem;
+  height: 4rem;
+}
+
+.card__pic--back {
+  transform: rotateY(0.5turn);
+  color: #b7c9e5;
+  background: var(--light-gray);
+  background: conic-gradient(
+      var(--secondary) 0.25turn,
+      var(--primary) 0.25turn 0.5turn,
+      var(--secondary) 0.5turn 0.75turn,
+      var(--primary) 0.75turn
+    )
+    top left / 25% 25% repeat;
+  border-radius: 50%;
+}
+
+.card__header {
+  display: flex;
+  align-self: flex-start;
+}
+
+.card__name {
+  padding: 2rem;
+  padding-top: 3rem;
+  font-size: 4rem;
+  line-height: 0.6rem;
+  position: relative;
+}
+
+.card__name sub {
+  font-size: 1.2rem;
+  padding-inline-start: 1rem;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.card__body {
+  width: 80%;
+}
+
+.card__body,
+.card__body__avatar {
+  margin-block: 3rem;
+}
+
+.card__body__bio {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  resize: horizontal;
+}
+
+.card__body--info {
+  padding: 1rem 0 0;
+}
+
+ul {
+  padding-left: 1rem;
+  list-style-type: circle;
+}
+
+.card__body__avatar svg {
+  width: 3rem;
+  height: 3rem;
+  filter: invert(40%);
+  margin: 0.6rem;
+}
+
+.card__body__icons {
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+}
+
+.card__icon path {
+  display: none;
+}
+
+.card__icon path:target {
+  display: block;
+}
+
+.card__icon svg {
+  position: absolute;
+  filter: invert(45%);
+}
+
+.card__footer {
+  display: flex;
+  justify-content: center;
+}
+
+.card__footer > div {
+  padding-inline: 3rem;
+  border-right: 1px solid var(--gray);
+}
+
+.card__footer > div:last-child {
+  border: none;
+}
+
+.card__footer svg {
+  width: 1.2rem;
+  position: relative;
+  top: 0.3rem;
+  margin-inline-end: 0.2rem;
+}
+
+video {
+  width: 100%;
+  height: auto;
+  border: 6px double var(--gray);
+  border-radius: 3px;
+  outline: 4px solid var(--accent);
+}
+
+.video {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.video__description {
+  margin-inline-start: 2rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+@media only screen and (max-width: 576px) {
+  .card {
+    width: 90%;
+    padding-inline: 2rem;
+  }
+
+  .card__header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card__name {
+    line-height: 3rem;
+    text-align: center;
+  }
+
+  sub {
+    position: absolute;
+    bottom: 0.3rem;
+    right: 1.6rem;
+    transform: rotate(-15deg);
+    text-shadow: 0 0 6px var(--accent);
+  }
+
+  .card__body {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .video {
+    width: 100%;
+    flex-direction: column-reverse;
+  }
+
+  .video__description {
+    margin-inline-start: 0;
+    margin-bottom: 1rem;
+  }
+
+  .card__footer > div {
+    padding: 0 0.5rem;
+  }
+
+  .card__footer a {
+    font-size: 0.7rem;
+  }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 992px) {
+  .card {
+    width: 80%;
+    padding-inline: 2rem;
+  }
+
+  .card__header {
+    align-self: center;
+  }
+
+  .card__name {
+    padding-inline-end: 0;
+    line-height: 3rem;
+  }
+
+  .card__pic--front::before {
+    width: 9.6rem;
+  }
+
+  sub {
+    position: absolute;
+    bottom: -0.4rem;
+    left: 0;
+  }
+
+  .card__body {
+    width: 100%;
+  }
+
+  .video {
+    width: 100%;
+    flex-direction: column-reverse;
+  }
+
+  .video__description {
+    margin-inline-start: 0;
+    margin-bottom: 1rem;
+  }
+
+  .card__footer > div {
+    padding: 0 1.5rem;
+  }
+}
