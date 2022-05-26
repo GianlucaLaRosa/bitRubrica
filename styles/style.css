@@ -14,6 +14,16 @@
   margin: 0;
 }
 
+::-moz-selection {
+  color: var(--bheader-col);
+  background: var(--accent);
+}
+
+::selection {
+  color: var(--bheader-col);
+  background: var(--accent);
+}
+
 html {
   font-family: "Odibee Sans", cursive;
 }
@@ -44,6 +54,7 @@ header {
 
 h1 {
   color: var(--header);
+  -webkit-text-stroke: 1px var(--stroke);
 }
 
 nav a {
@@ -60,6 +71,7 @@ nav a::before {
   width: 3rem;
   height: 3rem;
   margin-inline-end: 3rem;
+  filter: drop-shadow(0 0 25px white);
 }
 main {
   min-height: calc(100vh - 17rem);
@@ -80,6 +92,7 @@ thead {
 caption {
   font-size: 2.6rem;
   padding: 0.4rem;
+  text-shadow: 0 0 45px white;
 }
 
 tr:nth-child(even) {

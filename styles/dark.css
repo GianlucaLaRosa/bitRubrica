@@ -1,5 +1,6 @@
 :root {
   --accent: orange;
+  --accent-transp: #ffa50088;
   --secondary: rgb(224, 224, 127);
   --primary: #a0c0d7;
   --gray: rgb(0, 0, 0);
@@ -7,6 +8,7 @@
   --header-bcol: #567eac;
   --body-bcol: #1f3e5c;
   --dark: rgb(2, 22, 34);
-  --gray-transp: #3332;
+  --gray-transp: #ddd2;
   --header: rgb(255, 165, 0);
+  --stroke: #000;
 }

@@ -2,6 +2,7 @@
   --primary: #d0edf6;
   --secondary: #5b94bd;
   --accent: #1a6092;
+  --accent-transp: #1a609288;
   --gray: #333;
   --light-gray: #555;
   --header-bcol: #ccedf7;
@@ -9,4 +10,5 @@
   --dark: #000;
   --gray-transp: #3332;
   --header: #000;
+  --stroke: #0000;
 }
