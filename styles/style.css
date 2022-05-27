@@ -92,7 +92,7 @@ thead {
 caption {
   font-size: 2.6rem;
   padding: 0.4rem;
-  text-shadow: 0 0 45px white;
+  text-shadow: 0 0 45px #fff6;
 }
 
 tr:nth-child(even) {
