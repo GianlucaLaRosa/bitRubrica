@@ -58,7 +58,7 @@ h1 {
 }
 
 nav a {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   font-size: 2rem;
 }
@@ -113,28 +113,12 @@ a:active {
   text-decoration: none;
 }
 
-.name a {
-  position: relative;
-}
-
-.name {
-  text-decoration: none;
-  transition: transform 0.4s;
-}
-
-a::before {
-  content: "»";
-  display: none;
-}
-
-a:hover::before {
-  display: block;
-  position: absolute;
-  left: -1rem;
-}
-
-.name:hover {
-  transform: scale(1.2);
+td img {
+  width: 4rem;
+  aspect-ratio: 1;
+  border-radius: 2rem;
+  border: 2px solid var(--accent);
+  margin-top: 0.5rem;
 }
 
 th {

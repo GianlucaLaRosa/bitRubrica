@@ -1,0 +1,22 @@
+{
+  "name": "rubrica",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GianlucaLaRosa/bitRubrica.git"
+  },
+  "author": "Gianluca La Rosa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GianlucaLaRosa/bitRubrica/issues"
+  },
+  "homepage": "https://github.com/GianlucaLaRosa/bitRubrica#readme",
+  "dependencies": {
+    "json-server": "^0.17.0"
+  }
+}
