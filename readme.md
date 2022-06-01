@@ -1,6 +1,6 @@
-#Address book
+# Address book
 
-###Features:
+### Features:
 
 - this app respond to your system theme
 - many pages have a scroll progression bar on the very top
@@ -15,3 +15,5 @@ To activate the scroll prograssion bar in _Chrome/Chromium_ follow the newx step
 - restart your browser
 
 Thank you.
+
+[![Smile](/assets/images/smile.png "Smile")]
