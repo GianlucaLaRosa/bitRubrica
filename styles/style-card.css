@@ -110,7 +110,7 @@
   margin-block: 3rem;
 }
 
-.card__body__bio {
+#card__body__bio {
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
@@ -118,7 +118,7 @@
   resize: horizontal;
 }
 
-.card__body--info {
+#card__body--info {
   padding: 1rem 0 0;
 }
 
@@ -176,8 +176,8 @@ ul {
 }
 
 video {
-  width: 100%;
-  height: auto;
+  width: auto;
+  min-height: 12rem;
   border: 6px double var(--gray);
   border-radius: 3px;
   outline: 4px solid var(--accent);
@@ -215,7 +215,7 @@ video::-webkit-media-controls-time-remaining-display {
   align-items: flex-start;
 }
 
-.video__description {
+#video__description {
   margin-inline-start: 2rem;
 }
 
@@ -257,7 +257,7 @@ h3 {
     flex-direction: column-reverse;
   }
 
-  .video__description {
+  #video__description {
     margin-inline-start: 0;
     margin-bottom: 1rem;
   }
@@ -305,7 +305,7 @@ h3 {
     flex-direction: column-reverse;
   }
 
-  .video__description {
+  #video__description {
     margin-inline-start: 0;
     margin-bottom: 1rem;
   }

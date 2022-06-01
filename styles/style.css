@@ -125,6 +125,15 @@ th {
   font-size: 2rem;
 }
 
+tr td {
+  transition: transform 0.4s;
+}
+
+tr:hover td {
+  transform: scale(1.4);
+  cursor: pointer;
+}
+
 footer {
   height: 3rem;
   margin: 2rem auto 0;
