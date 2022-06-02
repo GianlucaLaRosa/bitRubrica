@@ -177,7 +177,7 @@ ul {
 
 video {
   width: auto;
-  min-height: 12rem;
+  height: 12rem;
   border: 6px double var(--gray);
   border-radius: 3px;
   outline: 4px solid var(--accent);

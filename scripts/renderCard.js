@@ -45,10 +45,11 @@ let cardBio = document.getElementById("card__body__bio");
 cardBio.appendChild(bioText);
 
 //video
-let cardVideo = document.querySelectorAll("source");
-let videoName = myPerson[0].fav_video.split(".")[0];
-cardVideo[0].setAttribute("src", `../assets/videos/${videoName}.mp4`);
-cardVideo[1].setAttribute("src", `../assets/videos/${videoName}.avi`);
+let video = document.getElementById("video__container").firstElementChild;
+let source = document.createElement("source");
+source.setAttribute("src", "../assets/videos/sample.mp4");
+source.setAttribute("type", "video/mp4");
+video.appendChild(source);
 
 //video desc
 let videoText = document.createTextNode(myPerson[0].long_desc);
