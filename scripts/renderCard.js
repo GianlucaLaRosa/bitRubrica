@@ -4,13 +4,13 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
   get: (searchParams, prop) => searchParams.get(prop),
 });
 let value = params.id;
+console.log(params.id);
 
 let myPerson = db.person.filter(el => el.id == value);
 
 //title
 let titleText = `${myPerson[0].name} ${myPerson[0].surname} | Address book`;
 document.title = titleText;
-console.log(titleText);
 //pageTitle.;
 
 //name and surname

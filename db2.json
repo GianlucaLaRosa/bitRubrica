@@ -43,18 +43,18 @@
       "long_desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus dicta fugiat placeat natus libero accusantium consequuntur? Illum itaque, commodi eligendi ad id iste quae minima vitae nesciunt. Saepe, corporis nesciunt?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus dicta fugiat placeat natus libero accusantium consequuntur? Illum itaque, commodi eligendi ad id iste quae minima vitae nesciunt. Saepe, corporis nesciunt?"
     },
     {
+      "id": 3,
       "name": "Daniel",
       "surname": "Zotti",
       "avatar": "https://api.lorem.space/image/face?w=150&h=150&hash=225E6693",
       "hobbies": "",
       "fav_video": "sample.mp4",
       "email": "daniel.zotti@bitrock.it",
-      "pre": "undefined",
-      "tel": "",
-      "web_site": "undefined",
-      "bio": "undefined",
-      "desc": "undefined",
-      "id": 3
+      "tel_prefix": "+39",
+      "tel_number": "3996464658",
+      "website": "https://www.linkedin.com/in/danielzotti/",
+      "short_desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, sit inventore mollitia cumque Ex, sit inventore mollitia cumque quo consectetur magni distinctio rem voluptatibus, libero est fugiat dicta quam expedita?",
+      "long_desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus dicta fugiat placeat natus libero accusantium consequuntur? Illum itaque, commodi eligendi ad id iste quae minima vitae nesciunt. Saepe, corporis nesciunt?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus dicta fugiat placeat natus libero accusantium consequuntur? Illum itaque, commodi eligendi ad id iste quae minima vitae nesciunt. Saepe, corporis nesciunt?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus dicta fugiat placeat natus libero accusantium consequuntur? Illum itaque, commodi eligendi ad id iste quae minima vitae nesciunt. Saepe, corporis nesciunt ipsum, dolor sit amet consectetur adipisicing elit. Repellendus dicta fugiat placeat natus libero accusantium consequuntur? Illum itaque, commodi eligendi ad id iste quae minima vitae nesciunt. Saepe, corporis nesciunt?"
     },
     {
       "id": 4,

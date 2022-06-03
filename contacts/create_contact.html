@@ -4,6 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="../styles/dark.css"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link
+      rel="stylesheet"
+      href="../styles/light.css"
+      media="(prefers-color-scheme: no-preference), (prefers-color-scheme:light)"
+    />
     <link rel="stylesheet" href="../styles/style.css" />
     <title>Document</title>
   </head>
@@ -35,8 +45,8 @@
           ><input type="email" name="email" id="email" />
         </div>
         <div>
-          <label for="prefix">Telephone prefix: </label
-          ><input type="text" name="prefix" id="prefix" />
+          <label for="pre">Telephone prefix: </label
+          ><input type="text" name="pre" id="pre" />
         </div>
         <div>
           <label for="tel">Telehone number: </label
@@ -60,7 +70,11 @@
           <button type="submit">Submit</button>
         </div>
       </form>
-      <script src="../scripts/create_contact.js" type="module"></script>
+      <script
+        type="text/javascript"
+        src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/0.10.0/lodash.min.js"
+      ></script>
+      <script src="../scripts/createContact.js" type="module"></script>
     </main>
   </body>
 </html>
