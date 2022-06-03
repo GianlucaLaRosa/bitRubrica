@@ -29,7 +29,7 @@
     <div class="progression__bar"></div>
     <header>
       <nav>
-        <a href="/">
+        <a href="/?q=">
           <svg
             id="logo"
             xmlns="http://www.w3.org/2000/svg"
@@ -41,6 +41,22 @@
           </svg>
           <h1>Address book</h1></a
         >
+        <div id="manage">
+          <div>
+            <form id="search__bar" method="GET" action="/index.html">
+              <input
+                type="text"
+                id="search__input"
+                placeholder="Search..."
+              /><button type="submit" id="search__btn">
+                <img src="./assets/icons/mag.svg" alt="search" />
+              </button>
+            </form>
+          </div>
+          <div id="add">
+            <a href="/contacts/create_contact.html">+</a>
+          </div>
+        </div>
       </nav>
     </header>
     <main>
@@ -53,6 +69,8 @@
             <th scope="col">&nbsp;</th>
             <th scope="col">Name</th>
             <th scope="col">Surname</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
           </tr>
         </thead>
         <tbody></tbody>

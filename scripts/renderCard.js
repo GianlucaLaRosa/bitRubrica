@@ -4,7 +4,6 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
   get: (searchParams, prop) => searchParams.get(prop),
 });
 let value = params.id;
-console.log(params.id);
 
 let myPerson = db.person.filter(el => el.id == value);
 

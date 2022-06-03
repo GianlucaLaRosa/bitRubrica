@@ -117,6 +117,7 @@ let onFormSubmit = async e => {
 };
 
 let onFormSubmitChange = async e => {
+  e.preventDefault();
   try {
     let res = await fetch(`http://localhost:3000/person/${params.id}`, {
       headers: {
@@ -130,18 +131,16 @@ let onFormSubmitChange = async e => {
         hobbies: hobbies.value,
         fav_video: fav_video.value,
         email: email.value,
-        pre: pre.value,
-        tel: tel.value,
-        web_site: web_site.value,
-        bio: bio.value,
-        desc: desc.value,
+        tel_prefix: pre.value,
+        tel_number: tel.value,
+        website: web_site.value,
+        short_desc: bio.value,
+        long_desc: desc.value,
       }),
     });
     let data = await res.json();
     if (res.ok) {
-      window.location.href = `http://localhost:5500/contacts/contact.html?id=${
-        +window.localStorage.getItem("last_id") + 1
-      }`;
+      window.location.href = `http://localhost:5500/contacts/contact.html?id=${params.id}`;
     } else {
       throw new Error("Something went wrong during put request...");
     }
@@ -152,6 +151,10 @@ let onFormSubmitChange = async e => {
 
 storeLastId();
 
+if (params.id > window.localStorage.getItem("last_id")) {
+  window.location.replace("http://localhost:5500");
+}
+
 // If isPersonSelected is true, fill the form with person details.
 // Else leave it blank to create a new person.
 let isPersonSelected = !!params.id && !isNaN(params.id);
@@ -160,9 +163,6 @@ if (isPersonSelected) {
   fillForm();
   form.onsubmit = onFormSubmitChange;
 } else {
+  console.log("else");
   form.onsubmit = onFormSubmit;
 }
-
-/* let rawtemp_person = window.localStorage.getItem("temp_person");
-console.log(JSON.parse(rawtemp_person));
- */

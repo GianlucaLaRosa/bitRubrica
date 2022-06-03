@@ -57,6 +57,29 @@ h1 {
   -webkit-text-stroke: 1px var(--stroke);
 }
 
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#add {
+  font-size: 2.4rem;
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 15%;
+  background-color: var(--accent);
+  border: 2px solid var(--stroke);
+  box-shadow: 3px 3px 12px var(--stroke);
+  line-height: 1.8rem;
+}
+
+#add:hover {
+  box-shadow: none;
+}
+
 nav a {
   display: inline-flex;
   align-items: center;
@@ -73,6 +96,39 @@ nav a::before {
   margin-inline-end: 3rem;
   filter: drop-shadow(0 0 25px white);
 }
+
+#manage {
+  display: flex;
+  align-items: center;
+}
+
+#search__input {
+  border-radius: 5px 0 0 5px;
+  border: 2px solid var(--stroke);
+  border-inline-end: none;
+  width: 24ch;
+  height: 1.8rem;
+  background-color: var(--primary);
+}
+
+#search__btn {
+  height: 1.8rem;
+  width: 1.8rem;
+  border-radius: 0 5px 5px 0;
+  border: 2px solid var(--stroke);
+  margin-inline-end: 1.4rem;
+  background-color: var(--accent);
+}
+
+#search__btn > img {
+  position: relative;
+  top: 0.1rem;
+}
+
+#search__input:focus {
+  outline: none;
+}
+
 main {
   min-height: calc(100vh - 17rem);
   margin: 4rem auto 2rem;
@@ -121,6 +177,21 @@ td img {
   margin-top: 0.5rem;
 }
 
+img[alt="Modify"],
+img[alt="Delete"] {
+  width: 1.6rem;
+  border-radius: 0;
+  border: none;
+}
+
+img[alt="Modify"] {
+  padding-inline-start: 0.6rem;
+}
+
+img[alt="Delete"] {
+  padding-inline-end: 0.6rem;
+}
+
 th {
   font-size: 2rem;
 }
@@ -129,9 +200,18 @@ tr td {
   transition: transform 0.4s;
 }
 
+tr:hover td:last-child,
+tr:hover td:nth-child(4) {
+  transform: none;
+}
+
 tr:hover td {
   transform: scale(1.4);
   cursor: pointer;
+}
+
+tr:hover {
+  box-shadow: 0 3px 6px black;
 }
 
 footer {
