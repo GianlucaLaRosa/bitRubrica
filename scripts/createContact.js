@@ -1,8 +1,15 @@
-let form = document.querySelectorAll("form")[0];
+let form = document.querySelectorAll("form")[1];
+let searchBar = document.getElementById("search__bar");
+let searchInput = document.getElementById("search__input");
+let verb = document.getElementById("verb");
 
 const params = new Proxy(new URLSearchParams(window.location.search), {
   get: (searchParams, prop) => searchParams.get(prop),
 });
+
+if (window.localStorage.getItem("toggle") === null) {
+  window.localStorage.setItem("toggle", true);
+}
 
 let [
   name,
@@ -17,6 +24,11 @@ let [
   bio,
   desc,
 ] = form;
+
+let openModal = e => {
+  e.preventDefault();
+  document.getElementById("submit__modal").showModal();
+};
 
 let fillForm = async () => {
   try {
@@ -105,6 +117,7 @@ let onFormSubmit = async e => {
     });
     let data = await res.json();
     if (res.ok) {
+      console.log("resOk");
       window.location.href = `http://localhost:5500/contacts/contact.html?id=${
         +window.localStorage.getItem("last_id") + 1
       }`;
@@ -161,8 +174,28 @@ let isPersonSelected = !!params.id && !isNaN(params.id);
 
 if (isPersonSelected) {
   fillForm();
-  form.onsubmit = onFormSubmitChange;
+  verb.innerHTML = "modify";
 } else {
-  console.log("else");
-  form.onsubmit = onFormSubmit;
+  verb.innerHTML = "create";
 }
+
+form.onsubmit = openModal;
+
+document.getElementById("submit__modal").onsubmit = isPersonSelected
+  ? onFormSubmitChange
+  : onFormSubmit;
+
+document
+  .getElementById("cancel")
+  .addEventListener("click", () =>
+    document.getElementById("submit__modal").close()
+  );
+
+let searchPerson = e => {
+  e.preventDefault();
+  window.location.replace(
+    `http://localhost:5500/index.html?q=${searchInput.value}`
+  );
+};
+
+searchBar.onsubmit = searchPerson;

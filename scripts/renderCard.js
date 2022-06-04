@@ -1,5 +1,12 @@
 import db from "../db.json" assert { type: "json" };
 
+let searchBar = document.getElementById("search__bar");
+let searchInput = document.getElementById("search__input");
+
+if (window.localStorage.getItem("toggle") === null) {
+  window.localStorage.setItem("toggle", true);
+}
+
 const params = new Proxy(new URLSearchParams(window.location.search), {
   get: (searchParams, prop) => searchParams.get(prop),
 });
@@ -67,3 +74,12 @@ cardTel.setAttribute(
 let cardWebsite =
   document.getElementById("card__footer--link").firstElementChild;
 cardWebsite.setAttribute("href", myPerson[0].website);
+
+let searchPerson = e => {
+  e.preventDefault();
+  window.location.replace(
+    `http://localhost:5500/index.html?q=${searchInput.value}`
+  );
+};
+
+searchBar.onsubmit = searchPerson;

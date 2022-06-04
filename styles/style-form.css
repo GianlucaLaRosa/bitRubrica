@@ -1,0 +1,72 @@
+main form {
+  background-color: var(--primary);
+  width: 50%;
+  padding: 2rem;
+  border: 2px solid var(--accent);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+form > div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main input,
+main textarea {
+  border: 2px solid black;
+  border-radius: 3px;
+  margin: 0.2rem 0 0.2rem auto;
+  width: 22rem;
+  height: 1.4rem;
+  background-color: white;
+}
+
+main textarea {
+  height: 6rem;
+}
+
+main button {
+  border: 2px solid black;
+  border-radius: 3px;
+  width: 6rem;
+  height: 2.2rem;
+  margin-top: 1rem;
+  background-color: var(--header-bcol);
+  font-weight: bold;
+}
+
+[type="submit"] {
+  background-color: var(--accent);
+}
+
+dialog::backdrop {
+  background-color: #000b;
+}
+
+dialog {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  width: 20rem;
+  height: 20rem;
+  padding: 0;
+  border: 3px solid var(--accent);
+  border-radius: 5px;
+}
+
+dialog > form {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}

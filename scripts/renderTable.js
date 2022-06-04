@@ -6,11 +6,138 @@ let db;
 let tableRef = document.getElementById("address__table");
 let searchBar = document.getElementById("search__bar");
 let searchInput = document.getElementById("search__input");
+let gridRef = document.getElementById("grid__container");
 
-let getAddressBook = async query => {
-  let pre = !!query ? "?name_like=" : "";
+let getAddressGrid = async query => {
+  query ??= "";
+  document.getElementById("address__table").style.display = "none";
+  document.getElementById("grid__container").style.display = "grid";
   try {
-    let res = await fetch(`http://localhost:3000/person${pre}${query}`, {
+    let res = await fetch(
+      `http://localhost:3000/person?q=${query}&_page=1&_limit=12`,
+      {
+        header: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    let data = await res.json();
+    if (res.ok) {
+      let longLinks = res.headers.get("Link").split(",");
+      longLinks.forEach(link => {
+        document.getElementById(link.split(";")[0].slice(1, -1));
+        //.setAttribute("title", `link.split(";")[1].slice(6, -1)`);
+      });
+      console.log(longLinks[0].split(";")[0].slice(1, -1));
+      console.log(longLinks[0].split(";")[1].slice(6, -1));
+
+      //handling in case of null/empty db
+      if (typeof data === "undefined" || data.length === 0) {
+        const newDiv = document.createElement("div");
+        const newContent = document.createTextNode(
+          "Nobody in your address book."
+        );
+        newDiv.appendChild(newContent);
+        gridRef.appendChild(newDiv);
+      } else if (data.length === 1) {
+        window.location.href = `http://localhost:5500/contacts/contact.html?id=${data[0].id}`;
+      } else {
+        data.forEach(el => {
+          const newAnchor = document.createElement("a");
+          const newParagraph = document.createElement("p");
+          let prof_img = new Image();
+          prof_img.src = el.avatar;
+          prof_img.alt = `Foto profilo di ${el.name} ${el.surname}`;
+          const newContent = document.createTextNode(`CALL ${el.name}`);
+          newAnchor.appendChild(prof_img);
+          newParagraph.appendChild(newContent);
+          newAnchor.appendChild(newParagraph);
+          newAnchor.setAttribute(
+            "href",
+            `tel:${el.tel_prefix}${el.tel_number}`
+          );
+          newAnchor.setAttribute("id", "contact__cell");
+          gridRef.appendChild(newAnchor);
+
+          if (!res.headers.get("Link").includes("prev")) {
+            document.getElementById("prev").style.backgroundColor =
+              "var(--gray-transp)";
+            document.getElementById("prev").onmouseover = function () {
+              this.style.boxShadow = "none";
+            };
+          } else {
+            document.getElementById("prev").setAttribute("href", "prevLink");
+          }
+
+          if (!res.headers.get("Link").includes("next")) {
+            document.getElementById("next").style.backgroundColor =
+              "var(--gray-transp)";
+            document.getElementById("next").onmouseover = function () {
+              this.style.boxShadow = "none";
+            };
+          } else {
+            document.getElementById("next").setAttribute("href", "nextLink");
+          }
+        });
+      }
+    } else {
+      throw new Error("Sorry, impossible to access the database.");
+    }
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+if (window.localStorage.getItem("toggle") === null) {
+  window.localStorage.setItem("toggle", true);
+}
+if (window.localStorage.getItem("toggle") === "true") {
+  document
+    .getElementById("toggle")
+    .setAttribute("src", "/assets/icons/list.svg");
+  document.getElementById("toggle").addEventListener("click", () => {
+    window.localStorage.setItem("toggle", false);
+    window.location.replace("/");
+  });
+} else if (window.localStorage.getItem("toggle") === "false") {
+  document
+    .getElementById("toggle")
+    .setAttribute("src", "/assets/icons/grid.svg");
+  document.getElementById("toggle").addEventListener("click", () => {
+    window.localStorage.setItem("toggle", true);
+    window.location.replace("/");
+  });
+}
+
+let deleteItem = async () => {
+  try {
+    debugger;
+    let id = window.localStorage.getItem("deletingId");
+
+    let res = await fetch(`http://localhost:3000/person/${id}`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "DELETE",
+    });
+    console.log("test", res);
+    if (res.ok) {
+      window.localStorage.removeItem("deletingId");
+      window.location.href = "https://www.google.it/";
+    } else {
+      throw new Error("Sorry. Couldn't delete.");
+    }
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+let getAddressTable = async query => {
+  query ??= "";
+  document.getElementById("address__table").style.display = "table";
+  document.getElementById("grid__container").style.display = "none";
+  try {
+    let res = await fetch(`http://localhost:3000/person?q=${query}`, {
       header: {
         "Content-Type": "application/json",
       },
@@ -21,9 +148,11 @@ let getAddressBook = async query => {
       if (typeof data === "undefined" || data.length === 0) {
         let newRow = tableRef.insertRow();
         let avatarCell = newRow.insertCell(0);
-        avatarCell.setAttribute("colspan", 3);
+        avatarCell.setAttribute("colspan", 5);
         let message = document.createTextNode("Nobody in your address book.");
         avatarCell.appendChild(message);
+      } else if (data.length === 1) {
+        window.location.href = `http://localhost:5500/contacts/contact.html?id=${data[0].id}`;
       } else {
         data.forEach(el => {
           //insert new row
@@ -62,6 +191,7 @@ let getAddressBook = async query => {
 
           // create, set and append Modify image
           let modImg = document.createElement("a");
+          modImg.setAttribute("title", "Modify");
           modImg.setAttribute(
             "href",
             `./contacts/create_contact.html?id=${el.id}`
@@ -70,7 +200,11 @@ let getAddressBook = async query => {
 
           // create, set and append Delete image
           let delImg = document.createElement("a");
-          delImg.addEventListener("click", deleteItem.bind(null, el.id));
+          delImg.setAttribute("title", "Delete");
+          delImg.addEventListener("click", () => {
+            openDeleteModal();
+            window.localStorage.setItem("deletingId", el.id);
+          });
           delImg.appendChild(del_img);
 
           // create, set and append name
@@ -105,28 +239,32 @@ let getAddressBook = async query => {
   }
 };
 
+let openDeleteModal = () => {
+  document.getElementById("delete__modal").showModal();
+};
+
+document.getElementById("cancel").addEventListener("click", () => {
+  document.getElementById("delete__modal").close();
+  window.localStorage.removeItem("deletingId");
+});
+
+document
+  .getElementById("delete__modal--form")
+  .addEventListener("submit", () => {
+    deleteItem();
+  });
+
 let searchPerson = e => {
   e.preventDefault();
   window.location.replace(
     `http://localhost:5500/index.html?q=${searchInput.value}`
   );
 };
-let deleteItem = async id => {
-  try {
-    let res = await fetch(`http://localhost:3000/person/${id}`, {
-      header: {
-        "Content-Type": "application/json",
-      },
-      method: "DELETE",
-    });
-    if (res.ok) {
-      window.location.href("http://localhost:5500/");
-    } else {
-      throw new Error("Sorry. Couldn't delete.");
-    }
-  } catch (err) {
-    console.error(err);
-  }
-};
+
 searchBar.onsubmit = searchPerson;
-getAddressBook(params.q);
+if (window.localStorage.getItem("toggle") === "true") {
+  getAddressGrid(params.q);
+}
+if (window.localStorage.getItem("toggle") === "false") {
+  getAddressTable(params.q);
+}

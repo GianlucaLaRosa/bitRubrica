@@ -29,6 +29,34 @@
       "long_desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus dicta fugiat placeat natus libero accusantium consequuntur? Illum itaque, commodi eligendi ad id iste quae minima vitae nesciunt. Saepe, corporis nesciunt?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus dicta fugiat placeat natus libero accusantium consequuntur? Illum itaque, commodi eligendi ad id iste quae minima vitae nesciunt. Saepe, corporis nesciunt?Lorem ipsum, dolor sit amet consectetur adipisicing elit."
     },
     {
+      "id": 2,
+      "name": "Marika",
+      "surname": "Fabiani",
+      "avatar": "https://api.lorem.space/image/face?w=150&h=150&hash=A89D0DE6",
+      "hobbies": "visual basic, assembly, arduino",
+      "fav_video": "sample.mp4",
+      "email": "marika.fabiani@bitrock.it",
+      "tel_prefix": "+39",
+      "tel_number": "3369876542",
+      "website": "https://www.linkedin.com/in/marika-fabiani-93a415186/",
+      "short_desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+      "long_desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus dicta fugiat placeat natus libero accusantium consequuntur? Illum itaque, commodi eligendi ad id iste quae minima vitae nesciunt. Saepe, corporis nesciunt?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus dicta fugiat placeat natus libero accusantium consequuntur? Illum itaque, commodi eligendi ad id iste quae minima vitae nesciunt. Saepe, corporis nesciunt?"
+    },
+    {
+      "id": 3,
+      "name": "Daniel",
+      "surname": "Zotti",
+      "avatar": "https://api.lorem.space/image/face?w=150&h=150&hash=225E6693",
+      "hobbies": "",
+      "fav_video": "sample.mp4",
+      "email": "daniel.zotti@bitrock.it",
+      "tel_prefix": "+39",
+      "tel_number": "3996464658",
+      "website": "https://www.linkedin.com/in/danielzotti/",
+      "short_desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, sit inventore mollitia cumque Ex, sit inventore mollitia cumque quo consectetur magni distinctio rem voluptatibus, libero est fugiat dicta quam expedita?",
+      "long_desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus dicta fugiat placeat natus libero accusantium consequuntur? Illum itaque, commodi eligendi ad id iste quae minima vitae nesciunt. Saepe, corporis nesciunt?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus dicta fugiat placeat natus libero accusantium consequuntur? Illum itaque, commodi eligendi ad id iste quae minima vitae nesciunt. Saepe, corporis nesciunt?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus dicta fugiat placeat natus libero accusantium consequuntur? Illum itaque, commodi eligendi ad id iste quae minima vitae nesciunt. Saepe, corporis nesciunt ipsum, dolor sit amet consectetur adipisicing elit. Repellendus dicta fugiat placeat natus libero accusantium consequuntur? Illum itaque, commodi eligendi ad id iste quae minima vitae nesciunt. Saepe, corporis nesciunt?"
+    },
+    {
       "id": 4,
       "name": "Homer",
       "surname": "Simpson",
@@ -153,6 +181,20 @@
       "website": "https://www.linkedin.com/in/mara/",
       "short_desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, sit inventore mollitia cumque quo consectetur magni distinctio rem voluptatibus, libero est fugiat dicta quam expedita?",
       "long_desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus dicta fugiat placeat natus libero accusantium consequuntur? Illum itaque, commodi eligendi ad id iste quae minima vitae nesciunt. Saepe, corporis nesciunt?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus dicta fugiat placeat natus libero accusantium consequuntur? Illum itaque, commodi eligendi ad id iste quae minima vitae nesciunt. Saepe, corporis nesciunt?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus dicta fugiat placeat natus libero accusantium consequuntur? Illum itaque, commodi eligendi ad id iste quae minima vitae nesciunt. Saepe, corporis nesciunt?"
+    },
+    {
+      "name": "Christopher Hoover",
+      "surname": "Alvarado",
+      "avatar": "Voluptates illo qui ",
+      "hobbies": "Culpa molestias cum",
+      "fav_video": "Sunt dolores et adip",
+      "email": "cozojerani@mailinator.com",
+      "pre": "+1 (878) 459-7459",
+      "tel": "+1 (425) 963-6598",
+      "web_site": "https://www.cacefe.us",
+      "bio": "Ea quia adipisicing ",
+      "desc": "Quod aliquam iure ac",
+      "id": 13
     }
   ]
 }

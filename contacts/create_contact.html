@@ -15,7 +15,7 @@
     <meta name="theme-color" content="#ffffff" />
     <link
       rel="stylesheet"
-      href="../styles/dark.csss"
+      href="../styles/dark.css"
       media="(prefers-color-scheme: dark)"
     />
     <link
@@ -24,6 +24,7 @@
       media="(prefers-color-scheme: no-preference), (prefers-color-scheme:light)"
     />
     <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/style-form.css" />
     <title>Rubrica</title>
   </head>
   <body>
@@ -54,7 +55,7 @@
               </button>
             </form>
           </div>
-          <div id="add">
+          <div id="add" title="Add person">
             <a href="/contacts/create_contact.html">+</a>
           </div>
         </div>
@@ -92,11 +93,11 @@
         </div>
         <div>
           <label for="tel">Telehone number: </label
-          ><input type="number" name="tel" id="tel" />
+          ><input type="tel" name="tel" id="tel" />
         </div>
         <div>
           <label for="web_site">Website: </label
-          ><input type="text" name="web_site" id="web_site" />
+          ><input type="url" name="web_site" id="web_site" />
         </div>
         <div>
           <label for="bio">Bio: </label
@@ -107,20 +108,28 @@
           ><textarea name="desc" id="desc" cols="30" rows="10"></textarea>
         </div>
 
-        <div>
+        <div id="action">
           <button type="reset">Reset</button>
           <button type="submit">Submit</button>
         </div>
       </form>
-      <script
-        type="text/javascript"
-        src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/0.10.0/lodash.min.js"
-      ></script>
-      <script src="../scripts/createContact.js" type="module"></script>
+      <dialog id="submit__modal">
+        <form type="dialog">
+          <h3>Would you like to <span id="verb"></span> this contact?</h3>
+          <div>
+            <button type="button" id="cancel">Cancel</button
+            ><button type="submit" id="save">SAVE</button>
+          </div>
+        </form>
+      </dialog>
     </main>
     <footer>
       <p>&copy; Gianluca 2022</p>
     </footer>
-    <script type="module" src="/scripts/renderTable.js"></script>
+    <script
+      type="text/javascript"
+      src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/0.10.0/lodash.min.js"
+    ></script>
+    <script src="../scripts/createContact.js" type="module"></script>
   </body>
 </html>
