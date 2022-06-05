@@ -14,7 +14,7 @@ let getAddressGrid = async query => {
   document.getElementById("grid__container").style.display = "grid";
   try {
     let res = await fetch(
-      `http://localhost:3000/person?q=${query}&_page=1&_limit=12`,
+      `http://localhost:3000/person?q=${query}&_page=${params._page}&_limit=12`,
       {
         header: {
           "Content-Type": "application/json",
@@ -23,13 +23,20 @@ let getAddressGrid = async query => {
     );
     let data = await res.json();
     if (res.ok) {
+      let pageIndicator = (document.getElementById(
+        "page"
+      ).innerHTML = `${params._page}`);
       let longLinks = res.headers.get("Link").split(",");
       longLinks.forEach(link => {
-        document.getElementById(link.split(";")[0].slice(1, -1));
-        //.setAttribute("title", `link.split(";")[1].slice(6, -1)`);
+        document
+          .getElementById(link.split(";")[1].slice(6, -1))
+          .setAttribute(
+            "href",
+            `/?_limit=12&_page=${
+              link.split(";")[0].split("=")[2].split("&")[0]
+            }`
+          );
       });
-      console.log(longLinks[0].split(";")[0].slice(1, -1));
-      console.log(longLinks[0].split(";")[1].slice(6, -1));
 
       //handling in case of null/empty db
       if (typeof data === "undefined" || data.length === 0) {
@@ -65,8 +72,6 @@ let getAddressGrid = async query => {
             document.getElementById("prev").onmouseover = function () {
               this.style.boxShadow = "none";
             };
-          } else {
-            document.getElementById("prev").setAttribute("href", "prevLink");
           }
 
           if (!res.headers.get("Link").includes("next")) {
@@ -75,8 +80,6 @@ let getAddressGrid = async query => {
             document.getElementById("next").onmouseover = function () {
               this.style.boxShadow = "none";
             };
-          } else {
-            document.getElementById("next").setAttribute("href", "nextLink");
           }
         });
       }

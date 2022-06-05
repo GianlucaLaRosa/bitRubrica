@@ -293,6 +293,6 @@ footer {
   align-items: center;
 }
 
-#grid__controls > div:hover {
+#grid__controls > a:hover {
   box-shadow: 0 0 1rem var(--accent);
 }
