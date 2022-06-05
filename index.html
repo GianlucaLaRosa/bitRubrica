@@ -23,13 +23,14 @@
       media="(prefers-color-scheme: no-preference), (prefers-color-scheme:light)"
     />
     <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/style-form.css" />
     <title>Rubrica</title>
   </head>
   <body>
     <div class="progression__bar"></div>
     <header>
       <nav>
-        <a href="/">
+        <a href="/?q=&_page=1&_limit=12">
           <svg
             id="logo"
             xmlns="http://www.w3.org/2000/svg"
@@ -41,9 +42,35 @@
           </svg>
           <h1>Address book</h1></a
         >
+        <div id="manage">
+          <img id="toggle" alt="switch mode" title="Swithc mode" />
+          <div>
+            <form id="search__bar" method="GET" action="/index.html">
+              <input
+                type="text"
+                id="search__input"
+                placeholder="Search..."
+              /><button type="submit" id="search__btn">
+                <img src="./assets/icons/mag.svg" alt="search" />
+              </button>
+            </form>
+          </div>
+          <div id="add" title="Add person">
+            <a href="/contacts/create_contact.html">+</a>
+          </div>
+        </div>
       </nav>
     </header>
     <main>
+      <div id="grid__container">
+        <div id="grid__controls">
+          <a id="first">FIRST</a>
+          <a id="prev">PREV</a>
+          <div id="page">NN</div>
+          <a id="next">NEXT</a>
+          <a id="last">LAST</a>
+        </div>
+      </div>
       <table id="address__table">
         <caption>
           Gianluca's address book
@@ -53,10 +80,21 @@
             <th scope="col">&nbsp;</th>
             <th scope="col">Name</th>
             <th scope="col">Surname</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
           </tr>
         </thead>
         <tbody></tbody>
       </table>
+      <dialog id="delete__modal">
+        <form id="delete__modal--form" type="dialog">
+          <p>This contact will be deleted. Are you sure?</p>
+          <div>
+            <button type="button" id="cancel">Cancel</button
+            ><button type="submit" id="save">DELETE</button>
+          </div>
+        </form>
+      </dialog>
     </main>
     <footer>
       <p>&copy; Gianluca 2022</p>

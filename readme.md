@@ -16,4 +16,4 @@ To activate the scroll prograssion bar in _Chrome/Chromium_ follow the newx step
 
 Thank you.
 
-[![Smile](/assets/images/smile.png "Smile")]
+![Smile](/assets/images/smile.png "Smile")
