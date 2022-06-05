@@ -1,0 +1,135 @@
+table {
+  width: 40vw;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: var(--gray-transp);
+}
+
+caption {
+  font-size: 2.6rem;
+  padding: 0.4rem;
+  text-shadow: 0 0 45px #fff6;
+}
+
+tr:nth-child(even) {
+  background-color: var(--gray-transp);
+}
+
+td {
+  text-align: center;
+  padding-block: 1rem;
+  font-size: 1.6rem;
+}
+
+td img {
+  width: 4rem;
+  aspect-ratio: 1;
+  border-radius: 2rem;
+  border: 2px solid var(--accent);
+  margin-top: 0.5rem;
+}
+
+img[alt="Modify"],
+img[alt="Delete"] {
+  width: 1.6rem;
+  border-radius: 0;
+  border: none;
+}
+
+img[alt="Modify"] {
+  padding-inline-start: 0.6rem;
+}
+
+img[alt="Delete"] {
+  padding-inline-end: 0.6rem;
+}
+
+th {
+  font-size: 2rem;
+}
+
+tr td {
+  transition: transform 0.4s;
+}
+
+tr:hover td:last-child,
+tr:hover td:nth-child(4) {
+  transform: none;
+}
+
+tr:hover td {
+  transform: scale(1.4);
+  cursor: pointer;
+}
+
+tr:hover {
+  box-shadow: 0 3px 6px black;
+}
+
+tr:first-of-type:hover {
+  box-shadow: none;
+}
+
+#grid__container {
+  width: 80%;
+  gap: 1rem 0.8rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#contact__cell {
+  height: 5rem;
+  background-color: var(--header-bcol);
+  border: 3px solid var(--accent);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+#contact__cell:hover {
+  box-shadow: 0 0 1rem var(--accent);
+}
+
+#contact__cell:hover p {
+  font-weight: bold;
+}
+
+#contact__cell p {
+  margin: auto;
+}
+
+#contact__cell img {
+  height: 5rem;
+  aspect-ratio: 1;
+  border-right: 2px solid var(--accent);
+}
+
+#grid__controls {
+  margin-top: 2rem;
+  grid-column-start: 1;
+  grid-column-end: span 3;
+  grid-row-start: 5;
+  grid-row-end: span 2;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#grid__controls > div,
+#grid__controls > a {
+  height: 3rem;
+  width: 10%;
+  background-color: var(--header-bcol);
+  border: 3px solid var(--accent);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#grid__controls > a:hover {
+  box-shadow: 0 0 1rem var(--accent);
+}
