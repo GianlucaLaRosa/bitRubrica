@@ -2,34 +2,6 @@
   "person": [
     {
       "id": 0,
-      "name": "Gianluca",
-      "surname": "La Rosa",
-      "avatar": "https://api.lorem.space/image/face?w=150&h=150&hash=8B7BCDC2",
-      "hobbies": "corsa, nuoto, scacchi",
-      "fav_video": "sample.mp4",
-      "email": "gianluca.larosa@bitrock.it",
-      "tel_prefix": "+39",
-      "tel_number": "3881486664",
-      "website": "https://www.linkedin.com/in/larosa-gianluca/",
-      "short_desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, sit inventore mollitia cumque quo consectetur magni distinctio rem voluptatibus, libero est fugiat dicta quam expedita?",
-      "long_desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus dicta fugiat placeat natus libero accusantium consequuntur? Illum itaque, commodi eligendi ad id iste quae minima vitae nesciunt. Saepe, corporis nesciunt?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus dicta fugiat placeat natus libero accusantium consequuntur? Illum itaque, commodi eligendi ad id iste quae minima vitae nesciunt. Saepe, corporis nesciunt?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus dicta fugiat placeat natus libero accusantium consequuntur? Illum itaque, commodi eligendi ad id iste quae minima vitae nesciunt. Saepe, corporis nesciunt?"
-    },
-    {
-      "id": 1,
-      "name": "Niccolò",
-      "surname": "Naso",
-      "avatar": "https://api.lorem.space/image/face?w=150&h=150&hash=500B67FB",
-      "hobbies": "lingue, viaggi",
-      "fav_video": "sample.mp4",
-      "email": "niccolo.naso@bitrock.it",
-      "tel_prefix": "+39",
-      "tel_number": "3341234569",
-      "website": "https://www.linkedin.com/in/niccol%C3%B2-naso-888039178/",
-      "short_desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, sit inventore mollitia cumque quo consectetur magni distinctio rem voluptatibus, libero est fugiat dicta quam expedita?",
-      "long_desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus dicta fugiat placeat natus libero accusantium consequuntur? Illum itaque, commodi eligendi ad id iste quae minima vitae nesciunt. Saepe, corporis nesciunt?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus dicta fugiat placeat natus libero accusantium consequuntur? Illum itaque, commodi eligendi ad id iste quae minima vitae nesciunt. Saepe, corporis nesciunt?Lorem ipsum, dolor sit amet consectetur adipisicing elit."
-    },
-    {
-      "id": 2,
       "name": "Marika",
       "surname": "Fabiani",
       "avatar": "https://api.lorem.space/image/face?w=150&h=150&hash=A89D0DE6",
@@ -85,7 +57,7 @@
       "long_desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus dicta fugiat placeat natus libero accusantium consequuntur? Illum itaque, commodi eligendi ad id iste quae ?"
     },
     {
-      "id": 6,
+      "id": 7,
       "name": "Lisa",
       "surname": "Simpson",
       "avatar": "https://api.lorem.space/image/face?w=150&h=150&hash=7F5AE56A",
@@ -99,7 +71,7 @@
       "long_desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus dicta fugiat placeat natus libero accusantium consequuntur? Illum itaque, commodi eligendi ad id iste quae minima vitae nesciunt. Saepe, corporis nesciunt?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus dicta fugiat placeat natus libero accusantium consequuntur? Illum itaque, commodi eligendi ad id iste quae minima vitae nesciunt."
     },
     {
-      "id": 7,
+      "id": 6,
       "name": "Marge",
       "surname": "Simpson",
       "avatar": "https://api.lorem.space/image/face?w=150&h=150&hash=4F32C4CF",
@@ -155,7 +127,7 @@
       "long_desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus dicta fugiat placeat natus libero accusantium consequuntur? Illum itaque, commodi eligendi ad id iste quae minima vitae nesciunt. Saepe, corporis nesciunt?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus dicta fugiat placeat natus libero accusantium consequuntur? Illum itaque, commodi eligendi ad id iste quae minima vitae nesciunt. Saepe, corporis nesciunt?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus dicta fugiat placeat natus libero accusantium consequuntur? Illum itaque, commodi eligendi ad id iste quae minima vitae nesciunt. Repellendus dicta fugiat placeat natus libero accusantium consequuntur? Illum itaque, commodi eligendi ad id iste quae minima vitae nesciunt. Saepe, corporis nesciunt?"
     },
     {
-      "id": 11,
+      "id": 1,
       "name": "Pippo",
       "surname": "Baudo",
       "avatar": "https://api.lorem.space/image/face?w=150&h=150&hash=8B7BCDC2",
@@ -185,7 +157,7 @@
     {
       "name": "Christine Odonnell",
       "surname": "Mercer",
-      "avatar": "Officia velit aut e",
+      "avatar": "https://api.lorem.space/image/face?w=150&h=150&hash=500B67FB",
       "hobbies": "Assumenda voluptatem",
       "fav_video": "Dolorem rerum non su",
       "email": "zifiq@mailinator.com",

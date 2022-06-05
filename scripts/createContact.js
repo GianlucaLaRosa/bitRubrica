@@ -51,10 +51,8 @@ let fillForm = async () => {
       form.web_site.value = data.website;
       form.bio.value = data.short_desc;
       form.desc.value = data.long_desc;
-      window.localStorage.setItem("temp_person", JSON.stringify(data));
     } else {
-      window.localStorage.removeItem("temp_person");
-      if (params.id > window.localStorage.getItem("last_id")) {
+      if (+params.id > +window.localStorage.getItem("last_id")) {
         throw new Error(
           "Sorry, the person you are looking for doesn't exists."
         );
@@ -64,6 +62,7 @@ let fillForm = async () => {
     }
   } catch (err) {
     console.error(err);
+    history.back();
   }
 };
 
@@ -164,7 +163,7 @@ let onFormSubmitChange = async e => {
 
 storeLastId();
 
-if (params.id > window.localStorage.getItem("last_id")) {
+if (+params.id > +window.localStorage.getItem("last_id")) {
   window.location.replace("http://localhost:5500");
 }
 

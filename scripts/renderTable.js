@@ -114,7 +114,6 @@ if (window.localStorage.getItem("toggle") === "true") {
 
 let deleteItem = async () => {
   try {
-    debugger;
     let id = window.localStorage.getItem("deletingId");
 
     let res = await fetch(`http://localhost:3000/person/${id}`, {
