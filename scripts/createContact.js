@@ -2,6 +2,11 @@ let form = document.querySelectorAll("form")[1];
 let searchBar = document.getElementById("search__bar");
 let searchInput = document.getElementById("search__input");
 let verb = document.getElementById("verb");
+const urlRegex =
+  /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/;
+const mailRegex =
+  /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
+const videoRegex = /^.*\.(mp4|MP4|avi|AVI|mov|MOV)$/;
 
 const params = new Proxy(new URLSearchParams(window.location.search), {
   get: (searchParams, prop) => searchParams.get(prop),
@@ -92,39 +97,51 @@ let storeLastId = async () => {
 };
 
 let onFormSubmit = async e => {
-  try {
-    e.preventDefault();
+  if (
+    name.value.length > 0 &&
+/*     surname.value.length > 0 && */
+    /*urlRegex.test(avatar.value) && */
+    /*urlRegex.test(web_site.value) && */
+    /*mailRegex.test(email.value) && */
+    /*videoRegex.test(fav_video.value) && */
+    /* /^[0-9]{6,7}$/.test(tel.value) && */
+    /* /^[+]{1}\d{2,3}$/.test(pre.value) */
+  ) {
+    console.log("TEEEEEEEEEEEEEEEEEST!");
 
-    let res = await fetch("http://localhost:3000/person", {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-      body: JSON.stringify({
-        name: name.value,
-        surname: surname.value,
-        avatar: avatar.value,
-        hobbies: hobbies.value,
-        fav_video: fav_video.value,
-        email: email.value,
-        pre: pre.value,
-        tel: tel.value,
-        web_site: web_site.value,
-        bio: bio.value,
-        desc: desc.value,
-      }),
-    });
-    let data = await res.json();
-    if (res.ok) {
-      console.log("resOk");
-      window.location.href = `http://localhost:5500/contacts/contact.html?id=${
-        +window.localStorage.getItem("last_id") + 1
-      }`;
-    } else {
-      throw new Error("Something went wrong during post request...");
+    try {
+      e.preventDefault();
+
+      let res = await fetch("http://localhost:3000/person", {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+        body: JSON.stringify({
+          name: name.value,
+          surname: surname.value,
+          avatar: avatar.value,
+          hobbies: hobbies.value,
+          fav_video: fav_video.value,
+          email: email.value,
+          pre: pre.value,
+          tel: tel.value,
+          web_site: web_site.value,
+          bio: bio.value,
+          desc: desc.value,
+        }),
+      });
+
+      if (res.ok) {
+        window.location.href = `http://localhost:5500/contacts/contact.html?id=${
+          +window.localStorage.getItem("last_id") + 1
+        }`;
+      } else {
+        throw new Error("Something went wrong during post request...");
+      }
+    } catch (err) {
+      console.error(err);
     }
-  } catch (err) {
-    console.error(err);
   }
 };
 
