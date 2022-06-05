@@ -70,3 +70,7 @@ dialog > form {
   justify-content: space-between;
   align-items: center;
 }
+
+input:invalid {
+  outline: 2px solid var(--accent);
+}
