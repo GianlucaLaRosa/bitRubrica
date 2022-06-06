@@ -197,32 +197,18 @@
       "id": 14
     },
     {
-      "name": "sadfas",
-      "surname": "sdfasdf",
-      "avatar": "https://api.lorem.space/image/face?w=150&h=150&hash=8B7BCDC2",
-      "hobbies": "canna, pesca",
-      "fav_video": "",
+      "name": "Gianluca",
+      "surname": "LA",
+      "avatar": "https://api.lorem.space/image/face?w=150&h=150&hash=500B67FB",
+      "hobbies": "canne, pesca",
+      "fav_video": "C:\\fakepath\\sample.avi",
       "email": "gianluca_larosa@live.com",
       "pre": "+39",
-      "tel": "654456",
-      "web_site": "https://www.linkedin.com/in/marika-fabiani-93a415186/",
+      "tel": "3881486664",
+      "web_site": "https://www.linkedin.com/in/larosa-gianluca/",
       "bio": "",
       "desc": "",
       "id": 15
-    },
-    {
-      "name": "Quemby Frederick",
-      "surname": "Gray",
-      "avatar": "https://api.lorem.space/image/face?w=150&h=150&hash=8B7BCDC2",
-      "hobbies": "Repudiandae, sequi de",
-      "fav_video": "Minim rerum tenetur ",
-      "email": "pijuby@mailinator.com",
-      "pre": "+10",
-      "tel": "654654",
-      "web_site": "https://www.boc.org.uk",
-      "bio": "Id aute in odio in f",
-      "desc": "Magna perspiciatis ",
-      "id": 16
     }
   ]
 }

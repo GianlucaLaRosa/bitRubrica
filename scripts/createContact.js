@@ -30,6 +30,18 @@ let [
   desc,
 ] = form;
 
+avatar.addEventListener("blur", () => {
+  if (avatar.value.startsWith("www")) {
+    avatar.value = "http://" + avatar.value;
+  }
+});
+
+web_site.addEventListener("blur", () => {
+  if (web_site.value.startsWith("www")) {
+    web_site.value = "http://" + web_site.value;
+  }
+});
+
 let openModal = e => {
   e.preventDefault();
   document.getElementById("submit__modal").showModal();
@@ -99,16 +111,14 @@ let storeLastId = async () => {
 let onFormSubmit = async e => {
   if (
     name.value.length > 0 &&
-/*     surname.value.length > 0 && */
-    /*urlRegex.test(avatar.value) && */
-    /*urlRegex.test(web_site.value) && */
-    /*mailRegex.test(email.value) && */
-    /*videoRegex.test(fav_video.value) && */
-    /* /^[0-9]{6,7}$/.test(tel.value) && */
-    /* /^[+]{1}\d{2,3}$/.test(pre.value) */
+    surname.value.length > 0 &&
+    urlRegex.test(avatar.value) &&
+    urlRegex.test(web_site.value) &&
+    mailRegex.test(email.value) &&
+    videoRegex.test(fav_video.value) &&
+    /^[0-9]{9,10}$/.test(tel.value) &&
+    /^[+]{1}\d{1,3}$/.test(pre.value)
   ) {
-    console.log("TEEEEEEEEEEEEEEEEEST!");
-
     try {
       e.preventDefault();
 
@@ -142,6 +152,91 @@ let onFormSubmit = async e => {
     } catch (err) {
       console.error(err);
     }
+  } else {
+    e.preventDefault();
+    if (name.value.length < 1) {
+      let nameError = document.createElement("li");
+      let textNameError = document.createTextNode("Name field is required");
+      nameError.appendChild(textNameError);
+      nameError.setAttribute("id", "field__error--item");
+      document.getElementById("field__error--list").appendChild(nameError);
+    }
+    if (surname.value.length < 1) {
+      let surnameError = document.createElement("li");
+      let textSurnameError = document.createTextNode(
+        "Surname field is required"
+      );
+      surnameError.appendChild(textSurnameError);
+      surnameError.setAttribute("id", "field__error--item");
+      document.getElementById("field__error--list").appendChild(surnameError);
+    }
+    if (!urlRegex.test(avatar.value)) {
+      let avatarError = document.createElement("li");
+      let textAvatarError = document.createTextNode(
+        "Avatar field is required and must be a valid URL"
+      );
+      avatarError.appendChild(textAvatarError);
+      avatarError.setAttribute("id", "field__error--item");
+      document.getElementById("field__error--list").appendChild(avatarError);
+    }
+    if (!urlRegex.test(web_site.value)) {
+      let webError = document.createElement("li");
+      let textWebError = document.createTextNode(
+        "Web site field is required and must be a valid URL"
+      );
+      webError.appendChild(textWebError);
+      webError.setAttribute("id", "field__error--item");
+      document.getElementById("field__error--list").appendChild(webError);
+    }
+    if (!mailRegex.test(email.value)) {
+      let emailError = document.createElement("li");
+      let textEmailError = document.createTextNode(
+        "Email field is required and must be a valid email address"
+      );
+      emailError.appendChild(textEmailError);
+      emailError.setAttribute("id", "field__error--item");
+      document.getElementById("field__error--list").appendChild(emailError);
+    }
+    if (!videoRegex.test(fav_video.value)) {
+      let videoError = document.createElement("li");
+      let textVideoError = document.createTextNode(
+        "Video field is required and must be an AVI, Mp4 or MOV format"
+      );
+      videoError.appendChild(textVideoError);
+      videoError.setAttribute("id", "field__error--item");
+      document.getElementById("field__error--list").appendChild(videoError);
+    }
+    if (!/^[0-9]{9,10}$/.test(tel.value)) {
+      let telError = document.createElement("li");
+      let textTelError = document.createTextNode(
+        "Tel field is required and must be without any inner space or character"
+      );
+      telError.appendChild(textTelError);
+      telError.setAttribute("id", "field__error--item");
+      document.getElementById("field__error--list").appendChild(telError);
+    }
+    if (!/^[+]{1}\d{1,3}$/.test(pre.value)) {
+      let prefixError = document.createElement("li");
+      let textPrefixError = document.createTextNode(
+        "Prefix field is required and must be a valid one"
+      );
+      prefixError.appendChild(textPrefixError);
+      prefixError.setAttribute("id", "field__error--item");
+      document.getElementById("field__error--list").appendChild(prefixError);
+    }
+
+    document.getElementById("field__error").showModal();
+    document.getElementById("submit__modal").close();
+    document
+      .getElementById("field__error--ok")
+      .addEventListener("click", function () {
+        while (document.getElementById("field__error--list").firstChild) {
+          document
+            .getElementById("field__error--list")
+            .removeChild(document.getElementById("field__error--item"));
+        }
+        document.getElementById("field__error").close();
+      });
   }
 };
 

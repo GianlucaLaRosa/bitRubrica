@@ -26,7 +26,6 @@ let getAddressGrid = async query => {
       let pageIndicator = (document.getElementById("page").innerHTML =
         params._page);
       if (res.headers.get("Link") !== null && res.headers.get("Link") !== "") {
-        console.log(res.headers.get("Link") === "");
         let longLinks = res.headers.get("Link").split(",");
         longLinks.forEach(link => {
           document
@@ -126,7 +125,6 @@ let deleteItem = async () => {
       },
       method: "DELETE",
     });
-    console.log("test", res);
     if (res.ok) {
       window.localStorage.removeItem("deletingId");
       window.location.href = "https://www.google.it/";

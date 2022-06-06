@@ -162,7 +162,8 @@ footer {
   cursor: pointer;
 }
 
-[type="submit"] {
+[type="submit"],
+#field__error--ok {
   background-color: var(--accent);
 }
 

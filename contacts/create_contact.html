@@ -72,16 +72,30 @@
           ><input type="text" name="surname" id="surname" required />
         </div>
         <div>
-          <label for="avatar">Avatar: </label
-          ><input type="text" name="avatar" id="avatar" required />
+          <label for="avatar">Avatar URL: </label
+          ><input type="url" name="avatar" id="avatar" required />
         </div>
         <div>
           <label for="hobbies">Hobbies: </label
-          ><input type="text" name="hobbies" id="hobbies" />
+          ><input
+            type="text"
+            name="hobbies"
+            id="hobbies"
+            placeholder="separated by commas"
+          />
         </div>
         <div>
-          <label for="fav_video">Favourite video: </label
-          ><input type="text" name="fav_video" id="fav_video" />
+          <label for="fav_video">Favourite video: </label>
+          <!-- <input type="text" name="fav_video" id="fav_video" required /> -->
+          <input
+            type="file"
+            accept=".mov, .mp4, .avi"
+            name="fav_video"
+            id="fav_video"
+            placeholder=" "
+            title=" "
+            required
+          />
         </div>
         <div>
           <label for="email">Email: </label
@@ -89,15 +103,15 @@
         </div>
         <div>
           <label for="pre">Telephone prefix: </label
-          ><input type="text" name="pre" id="pre" required />
+          ><input type="text" name="pre" id="pre" value="+" required />
         </div>
         <div>
-          <label for="tel">Telehone number: </label
+          <label for="tel">Telephone number: </label
           ><input type="tel" name="tel" id="tel" required />
         </div>
         <div>
-          <label for="web_site">Website: </label
-          ><input type="url" name="web_site" id="web_site" />
+          <label for="web_site">Website URL: </label
+          ><input type="url" name="web_site" id="web_site" required />
         </div>
         <div>
           <label for="bio">Bio: </label
@@ -121,6 +135,12 @@
             ><button type="submit" id="save">SAVE</button>
           </div>
         </form>
+      </dialog>
+      <dialog id="field__error">
+        <div>
+          <ul id="field__error--list"></ul>
+          <button id="field__error--ok">OK</button>
+        </div>
       </dialog>
     </main>
     <footer>
