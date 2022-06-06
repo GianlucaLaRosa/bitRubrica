@@ -9,6 +9,7 @@ You can change the visualization by toggling on top. It will let you delete/modi
 - many pages have a scroll progression bar on the very top
 - the form is validated by JS
 - the pagination is featured thanks to **json-server response headers**
+- **http-server** manage also the 404 status error
 
 This app uses loDASH.
 
