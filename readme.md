@@ -5,10 +5,12 @@ You can change the visualization by toggling on top. It will let you delete/modi
 
 ### Features:
 
-- this app respond to your system theme
+- this app responds to your system color theme
 - many pages have a scroll progression bar on the very top
 - the form is validated by JS
 - the pagination is featured thanks to **json-server response headers**
+
+This app uses loDASH.
 
 Before visit the app, via _npm_
 `npm install --global http-server json-server`
