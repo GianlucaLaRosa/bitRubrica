@@ -195,20 +195,6 @@
       "bio": "Incidunt in sed neq",
       "desc": "Ducimus at dolorum ",
       "id": 14
-    },
-    {
-      "name": "Gianluca",
-      "surname": "LA",
-      "avatar": "https://api.lorem.space/image/face?w=150&h=150&hash=500B67FB",
-      "hobbies": "canne, pesca",
-      "fav_video": "C:\\fakepath\\sample.avi",
-      "email": "gianluca_larosa@live.com",
-      "pre": "+39",
-      "tel": "3881486664",
-      "web_site": "https://www.linkedin.com/in/larosa-gianluca/",
-      "bio": "",
-      "desc": "",
-      "id": 15
     }
   ]
 }

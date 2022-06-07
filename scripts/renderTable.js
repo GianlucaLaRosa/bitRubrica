@@ -134,8 +134,10 @@ let deleteItem = async () => {
       method: "DELETE",
     });
     if (res.ok) {
+      document
+        .getElementById(window.localStorage.getItem("deletingId"))
+        .remove();
       window.localStorage.removeItem("deletingId");
-      window.location.href = "https://www.google.it/";
     } else {
       throw new Error("Sorry. Couldn't delete.");
     }
@@ -169,6 +171,7 @@ let getAddressTable = async query => {
         data.forEach(el => {
           //insert new row
           let newRow = tableRef.insertRow();
+          newRow.setAttribute("id", el.id);
 
           //insert new cells
           let avatarCell = newRow.insertCell(0);

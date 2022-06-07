@@ -151,6 +151,10 @@ footer {
   text-align: center;
 }
 
+footer p {
+  text-shadow: 0 0 12px var(--body-bcol);
+}
+
 #toggle {
   background-color: var(--accent);
   border: 2px solid black;
