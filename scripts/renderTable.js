@@ -7,14 +7,16 @@ let tableRef = document.getElementById("address__table");
 let searchBar = document.getElementById("search__bar");
 let searchInput = document.getElementById("search__input");
 let gridRef = document.getElementById("grid__container");
+let page = params._page;
 
 let getAddressGrid = async query => {
   query ??= "";
+  page ??= "1";
   document.getElementById("address__table").style.display = "none";
   document.getElementById("grid__container").style.display = "grid";
   try {
     let res = await fetch(
-      `http://localhost:3000/person?q=${query}&_page=${params._page}&_limit=12`,
+      `http://localhost:3000/person?q=${query}&_page=${page}&_limit=12`,
       {
         header: {
           "Content-Type": "application/json",
@@ -23,8 +25,9 @@ let getAddressGrid = async query => {
     );
     let data = await res.json();
     if (res.ok) {
-      let pageIndicator = (document.getElementById("page").innerHTML =
-        params._page);
+      document
+        .getElementById("page")
+        .appendChild(document.createTextNode(page));
       if (res.headers.get("Link") !== null && res.headers.get("Link") !== "") {
         let longLinks = res.headers.get("Link").split(",");
         longLinks.forEach(link => {
