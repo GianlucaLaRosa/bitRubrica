@@ -1,3 +1,8 @@
+/* import { test } from "./modules/grid";
+let prova = test();
+prova();
+test(); */
+
 const params = new Proxy(new URLSearchParams(window.location.search), {
   get: (searchParams, prop) => searchParams.get(prop),
 });
@@ -266,6 +271,7 @@ let searchPerson = e => {
 };
 
 searchBar.onsubmit = searchPerson;
+
 if (window.localStorage.getItem("toggle") === "true") {
   getAddressGrid(params.q);
 }
