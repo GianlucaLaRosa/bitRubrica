@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "startdb": "json-server --watch db.json",
-    "startserv": "http-server -p5500"
+    "startserv": "http-server -p 5500"
   },
   "repository": {
     "type": "git",
