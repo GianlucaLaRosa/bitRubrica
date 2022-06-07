@@ -11,6 +11,7 @@ You can change the visualization by toggling on top. It will let you delete/modi
 - the pagination is featured thanks to **json-server response headers**
 
 Before visit the app, via _npm_
+`npm i`
 `npm install --global http-server json-server`
 
 To use the _db.json_ file ad a Database
