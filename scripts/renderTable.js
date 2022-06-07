@@ -82,7 +82,7 @@ let getAddressGrid = async query => {
             "href",
             `tel:${el.tel_prefix}${el.tel_number}`
           );
-          newAnchor.setAttribute("id", "contact__cell");
+          newAnchor.setAttribute("class", "contact__cell");
           gridRef.appendChild(newAnchor);
         });
       }

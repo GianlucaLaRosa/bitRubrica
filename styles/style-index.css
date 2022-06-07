@@ -78,7 +78,7 @@ tr:first-of-type:hover {
   grid-template-columns: repeat(3, 1fr);
 }
 
-#contact__cell {
+.contact__cell {
   height: 5rem;
   background-color: var(--header-bcol);
   border: 3px solid var(--accent);
@@ -89,19 +89,19 @@ tr:first-of-type:hover {
   cursor: pointer;
 }
 
-#contact__cell:hover {
+.contact__cell:hover {
   box-shadow: 0 0 1rem var(--accent);
 }
 
-#contact__cell:hover p {
+.contact__cell:hover p {
   font-weight: bold;
 }
 
-#contact__cell p {
+.contact__cell p {
   margin: auto;
 }
 
-#contact__cell img {
+.contact__cell img {
   height: 5rem;
   aspect-ratio: 1;
   border-right: 2px solid var(--accent);
