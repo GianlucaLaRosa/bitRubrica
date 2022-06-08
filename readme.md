@@ -22,7 +22,7 @@ To use the _db.json_ file ad a Database
 and then in another window
 `npm run startserv`
 
-To activate the scroll prograssion bar in _Chrome/Chromium_ follow the newx steps:
+To activate the scroll progression bar in _Chrome/Chromium_ follow the next steps:
 
 - insert `chrome://flags` in the address bar and go
 - look for `Experimental Web Platform features`
