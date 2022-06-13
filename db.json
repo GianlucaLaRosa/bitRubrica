@@ -1,3 +1,16 @@
 {
-  "person": []
+  "person": [
+    {
+      "id": 1,
+      "name": "test"
+    },
+    {
+      "id": 2,
+      "name": "proba"
+    },
+    {
+      "id": 3,
+      "name": "prova"
+    }
+  ]
 }
