@@ -10,6 +10,6 @@ const contacts = {
 
 //console.log(contacts.stored);
 await contacts.refresh();
-console.log(contacts.stored[0]);
+// console.log(contacts.stored[0]);
 
 export default contacts;
