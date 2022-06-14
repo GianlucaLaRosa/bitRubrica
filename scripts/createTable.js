@@ -16,14 +16,14 @@ let createTable = contacts => {
 
   const tableRef = document.querySelector("#address__table--body");
 
-  if (contacts.stored.length === 0 || contacts.stored === "undefined") {
+  if (contacts.length === 0 || contacts === "undefined") {
     const newRow = tableRef.insertRow();
     const messageCell = newRow.insertCell(0);
     messageCell.setAttribute("colspan", 3);
     const message = document.createTextNode("Nobody in your address book.");
     messageCell.appendChild(message);
   } else {
-    contacts.stored.forEach(contact => {
+    contacts.forEach(contact => {
       const newRow = tableRef.insertRow();
       newRow.setAttribute("id", contact.id);
       newRow.addEventListener("click", () => {
@@ -36,16 +36,16 @@ let createTable = contacts => {
       let surnameCell = newRow.insertCell(2);
 
       // create and set profile image
-      let profImg = new Image();
+      const profImg = new Image();
       profImg.src = contact.avatar;
       profImg.alt = `Foto profilo di ${contact.name} ${contact.surname}`;
 
       // create and append name and surname
-      let nameText = document.createTextNode(contact.name);
-      let surnameText = document.createTextNode(contact.surname);
+      const nameText = document.createTextNode(contact.name);
+      const surnameText = document.createTextNode(contact.surname);
 
-      let paragName = document.createElement("p");
-      let paragSurname = document.createElement("p");
+      const paragName = document.createElement("p");
+      const paragSurname = document.createElement("p");
 
       paragName.appendChild(nameText);
       paragSurname.appendChild(surnameText);
