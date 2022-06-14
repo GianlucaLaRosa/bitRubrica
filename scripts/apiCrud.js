@@ -1,12 +1,12 @@
 // BASE ENDPOINT
-const url = `http://localhost:3000/person/`;
+const baseUrl = `http://localhost:3000/person/`;
 
 // CREATE
 
 let createContact = async (e, body) => {
   e.preventDefault();
   try {
-    const res = await fetch(url, {
+    const res = await fetch(baseUrl, {
       headers: {
         "Content-Type": "application/json",
       },
@@ -24,9 +24,9 @@ let createContact = async (e, body) => {
 
 // READ
 
-let readContacts = async () => {
+let readContacts = async (id = "") => {
   try {
-    const res = await fetch(url, {
+    const res = await fetch(baseUrl + id, {
       headers: {
         "Content-Type": "application/json",
       },
@@ -46,7 +46,7 @@ let readContacts = async () => {
 let updateContact = async (e, id, body) => {
   e.preventDefault();
   try {
-    const res = await fetch(`${url}?id=${id}`, {
+    const res = await fetch(baseUrl + id, {
       headers: {
         "Content-Type": "application/json",
       },
@@ -66,7 +66,7 @@ let updateContact = async (e, id, body) => {
 
 let deleteContact = async id => {
   try {
-    const res = await fetch(`${url}?id=${id}`, {
+    const res = await fetch(baseUrl + id, {
       headers: {
         "Content-Type": "application/json",
       },
